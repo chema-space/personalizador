@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const canvas = new fabric.Canvas('canvas');
     const saveButton = document.querySelector("#confirm-btn");
     const uploadButton = document.querySelector("#upload-img");
-    const fileInput = document.querySelector("#file-input")
+    const fileInput = document.querySelector("#file-input");
+    const customImg = document. querySelector("#custom-img")
     let selectedImageLogo = null;
     const imageUrl = "assets/img/Demo2.png";
 
@@ -83,6 +84,8 @@ document.addEventListener("DOMContentLoaded", function() {
             format: 'png',
             quality: 0.9
         });
+        customImg.style.display= "block";
+        customImg.src = generatedDataURL;
         localStorage.setItem("img", generatedDataURL)
     }
     saveButton.addEventListener("click", () => {
@@ -122,6 +125,8 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error("Hubo un error")
         }
     });
+
+
 });
 
 
